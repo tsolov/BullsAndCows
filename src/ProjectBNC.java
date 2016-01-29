@@ -47,7 +47,6 @@ public class ProjectBNC {
 				value = rand.nextInt(9000) + 1000;
 				OTHT(value, theNumber);
 
-				System.out.println(value);
 			}
 		} while (true);
 		System.out.print("Type your guess: ");
