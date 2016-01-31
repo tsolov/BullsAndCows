@@ -2,54 +2,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class ProjectBNC {
-	public static void dismember(int value, int[] array) {
-		array[0] = value / 1000;
-		array[1] = value / 100 % 10;
-		array[2] = value / 10 % 10;
-		array[3] = value % 10;
-
-	}
-
-	public static void bullsAndCows(int array[], int array2[]) {
-		int bulls = 0;
-		int cows = 0;
-		for (int i = 0; i < array.length; i++) {
-			for (int j = 0; j < array2.length; j++) {
-				if (i == j) {
-					if (array[i] == array2[j]) {
-						bulls++;
-					}
-					continue;
-				} else {
-					if (array[i] != array2[i]) {
-
-						if (array[i] == array2[j]) {
-
-							cows++;
-						}
-					}
-				}
-			}
-		}
-		System.out.println("You got " + cows + " cows");
-		System.out.println("You got " + bulls + " bulls");
-	}
-
-	public static boolean equalNumber(int array[]) {
-		int flag = 0;
-		for (int i = 0; i < array.length; i++) {
-			for (int j = i + 1; j < array.length; j++) {
-				if (array[i] == array[j]) {
-					flag = 1;
-					break;
-				}
-			}
-		}
-		if (flag == 1)
-			return false;
-		else
-			return true;
-	}
 
 	public static void main(String[] args) {
 		Random rand = new Random();
@@ -100,5 +52,54 @@ public class ProjectBNC {
 		System.out.println("You made a total of " + (attempts + 1) + " attempts");
 		System.out.println("The number was: " + value);
 
+	}
+
+	public static void dismember(int value, int[] array) {
+		array[0] = value / 1000;
+		array[1] = value / 100 % 10;
+		array[2] = value / 10 % 10;
+		array[3] = value % 10;
+
+	}
+
+	public static void bullsAndCows(int array[], int array2[]) {
+		int bulls = 0;
+		int cows = 0;
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array2.length; j++) {
+				if (i == j) {
+					if (array[i] == array2[j]) {
+						bulls++;
+					}
+					continue;
+				} else {
+					if (array[i] != array2[i]) {
+
+						if (array[i] == array2[j]) {
+
+							cows++;
+						}
+					}
+				}
+			}
+		}
+		System.out.println("You got " + cows + " cows");
+		System.out.println("You got " + bulls + " bulls");
+	}
+
+	public static boolean equalNumber(int array[]) {
+		int flag = 0;
+		for (int i = 0; i < array.length; i++) {
+			for (int j = i + 1; j < array.length; j++) {
+				if (array[i] == array[j]) {
+					flag = 1;
+					break;
+				}
+			}
+		}
+		if (flag == 1)
+			return false;
+		else
+			return true;
 	}
 }
