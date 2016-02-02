@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class ProjectBNC {
 
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		System.out.println("******************************************************************");
 		System.out.println("*                 Welcome to bulls and cows                      *");
 		System.out.println("*            Please select what would you like to do             *");
