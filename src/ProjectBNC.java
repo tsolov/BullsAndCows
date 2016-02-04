@@ -14,24 +14,32 @@ public class ProjectBNC {
 		System.out.println("4 - Exit                                                         *");
 		System.out.println("*                                                                *");
 		System.out.println("******************************************************************");
+
 		Scanner input = new Scanner(System.in);
-		int choice = input.nextInt();
-		switch (choice) {
-		case 1:
-			gameInfo();
-			break;
-		case 2:
-			game();
-			break;
-		case 3:
-			FAQ();
-			break;
-		case 4:
-			return;
-		default:
-			System.out.println("Please choose a correct option");
+		try {
+			int choice = input.nextInt();
+			switch (choice) {
+			case 1:
+				gameInfo();
+				break;
+			case 2:
+				game();
+				break;
+			case 3:
+				FAQ();
+				break;
+			case 4:
+				return;
+			default:
+				System.out.println("                Please choose a correct option                    ");
+				System.out.println();
+				main(null);
+				break;
+			}
+		} catch (java.util.InputMismatchException e) {
+			System.out.println("Please enter an integer: ");
 			main(null);
-			break;
+
 		}
 
 	}
@@ -96,12 +104,28 @@ public class ProjectBNC {
 		System.out.println("bulls shows how many of those were placed at the right spots.      *");
 		System.out.println("*                                                                  *");
 		System.out.println("*           If you want to go back to the menu click 0 !           *");
+		System.out.println("*                  If you want to exit  click 1 !                  *");
 		System.out.println("********************************************************************");
 
 		Scanner input = new Scanner(System.in);
 		int choice = input.nextInt();
+		switch (choice) {
+		case 0:
+			main(null);
+			break;
+		case 1:
+			return;
+		default:
+			System.out.println();
+			System.out.println("                  Please choose a correct option                    ");
+			System.out.println();
+			gameInfo();
+		}
 		if (choice == 0) {
 			main(null);
+		}
+		if (choice == 1) {
+			return;
 		}
 
 	}
@@ -115,13 +139,32 @@ public class ProjectBNC {
 		System.out.println("Answer: You will get the option to write a new number and the last one will not work.*");
 		System.out.println("Question: What should i do to win the game ?                                         *");
 		System.out.println("Answer: You should write the exact number that the computer chose.                   *");
+		System.out.println("Question: What if i enter something different than an integer?                       *");
+		System.out.println("Answer: You are directly removed from the game and kicked to the starting menu!      *");
 		System.out.println("*                                                                                    *");
 		System.out.println("*               If you want to go back to the menu click 0 !                         *");
+		System.out.println("*                       If you want to exit  click 1 !                               *");
 		System.out.println("**************************************************************************************");
 		Scanner input = new Scanner(System.in);
 		int choice = input.nextInt();
+		switch (choice) {
+		case 0:
+			main(null);
+			break;
+		case 1:
+			return;
+		default:
+			System.out.println();
+			System.out.println("                          Please choose a correct option                    ");
+			System.out.println();
+
+			FAQ();
+		}
 		if (choice == 0) {
 			main(null);
+		}
+		if (choice == 1) {
+			return;
 		}
 	}
 
@@ -173,4 +216,5 @@ public class ProjectBNC {
 		else
 			return true;
 	}
+
 }
